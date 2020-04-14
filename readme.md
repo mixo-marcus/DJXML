@@ -20,7 +20,7 @@ Project Website: [www.djxml.com](http://www.djxml.com)
 Supported by (so far!): [www.mixo.dj](http://www.mixo.dj)
 
 
-## DJXML v1.0.0
+## DJXML v1.0.1
 ```
 - DJXML: DJXML Version Number
 -- Software: Name and version of the software that exported the XML
