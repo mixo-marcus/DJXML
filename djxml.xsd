@@ -37,6 +37,7 @@
                 <xs:element minOccurs="0" maxOccurs="unbounded" ref="Tempo"/>
                 <xs:element minOccurs="0" maxOccurs="unbounded" ref="CuePoint"/>
             </xs:sequence>
+            <xs:attribute name="TrackID" type="xs:integer"/>
             <xs:attribute name="TrackName"/>
             <xs:attribute name="Album"/>
             <xs:attribute name="Artist" type="xs:anyURI"/>
@@ -64,7 +65,6 @@
             <xs:attribute name="Size" type="xs:integer"/>
             <xs:attribute name="Tonality"/>
             <xs:attribute name="TotalTime" type="xs:integer"/>
-            <xs:attribute name="TrackID" type="xs:integer"/>
             <xs:attribute name="TrackNumber" type="xs:integer"/>
             <xs:attribute name="Year" type="xs:integer"/>
             <xs:attribute name="Energy">
@@ -103,11 +103,8 @@
                 <xs:element minOccurs="0" ref="Playlist"/>
                 <xs:element minOccurs="0" maxOccurs="unbounded" ref="Track"/>
             </xs:sequence>
-            <xs:attribute name="Count" type="xs:integer"/>
-            <xs:attribute name="Entries" type="xs:integer"/>
-            <xs:attribute name="KeyType" type="xs:integer"/>
-            <xs:attribute name="Name" use="required"/>
-            <xs:attribute name="Type" use="required" type="xs:integer"/>
+            <xs:attribute name="PlaylistName" use="required"/>
+            <xs:attribute name="TrackCount" type="xs:integer"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
