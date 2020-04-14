@@ -77,21 +77,20 @@
             <xs:attribute name="PurchaseLink">            
         </xs:complexType>
     </xs:element>
-    <xs:element name="Tempo">
+    <xs:element name="BeatGrid">
         <xs:complexType>
-            <xs:attribute name="Battito" use="required" type="xs:integer"/>
-            <xs:attribute name="Bpm" use="required" type="xs:decimal"/>
-            <xs:attribute name="Inizio" use="required" type="xs:decimal"/>
-            <xs:attribute name="Metro" use="required"/>
+            <xs:attribute name="StartTime"/>
+            <xs:attribute name="Duration"/>
+            <xs:attribute name="BeatType"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="CuePoint">
         <xs:complexType>
-            <xs:attribute name="Name" use="required"/>
-            <xs:attribute name="Type" use="required" type="xs:integer"/>
-            <xs:attribute name="Start" use="required" type="xs:decimal"/>
+            <xs:attribute name="Name"/>
+            <xs:attribute name="Type" type="xs:integer"/>
+            <xs:attribute name="Start" type="xs:decimal"/>
             <xs:attribute name="End" type="xs:decimal"/>
-            <xs:attribute name="Num" use="required" type="xs:integer"/>
+            <xs:attribute name="Num" type="xs:integer"/>
             <xs:attribute name="Red" type="xs:integer"/>
             <xs:attribute name="Green" type="xs:integer"/>
             <xs:attribute name="Blue" type="xs:integer"/>
