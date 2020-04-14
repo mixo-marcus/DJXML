@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="DJXML">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Software"/>
+                <xs:element ref="Library"/>
+                <xs:element ref="Playlists"/>
+            </xs:sequence>
+            <xs:attribute name="DJXMLVersion" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Software">
+        <xs:complexType>
+            <xs:attribute name="SoftwareName" use="required" type="xs:NCName"/>
+            <xs:attribute name="SoftwareVersion" use="required" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Library">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="Track"/>
+            </xs:sequence>
+            <xs:attribute name="Entries" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Playlists">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Playlist"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Track">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="Tempo"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="CuePoint"/>
+            </xs:sequence>
+            <xs:attribute name="TrackName"/>
+            <xs:attribute name="Album"/>
+            <xs:attribute name="Artist" type="xs:anyURI"/>
+            <xs:attribute name="Remixer"/>
+            <xs:attribute name="Producer"/>
+            <xs:attribute name="Bpm" type="xs:decimal"/>
+            <xs:attribute name="BitRate" type="xs:integer"/>
+            <xs:attribute name="Colour" type="xs:NMTOKEN"/>
+            <xs:attribute name="Comments"/>
+            <xs:attribute name="DateAdded"/>
+            <xs:attribute name="DiscNumber" type="xs:integer"/>
+            <xs:attribute name="Genre"/>
+            <xs:attribute name="SubGenre"/>
+            <xs:attribute name="SubSubGenre"/>
+            <xs:attribute name="Grouping"/>
+            <xs:attribute name="Key" type="xs:integer"/>
+            <xs:attribute name="Kind"/>
+            <xs:attribute name="Label"/>
+            <xs:attribute name="Location"/>
+            <xs:attribute name="Mix"/>
+            <xs:attribute name="PlayCount" type="xs:integer"/>
+            <xs:attribute name="Rating" type="xs:integer"/>
+            <xs:attribute name="Remixer" type="xs:anyURI"/>
+            <xs:attribute name="SampleRate" type="xs:integer"/>
+            <xs:attribute name="Size" type="xs:integer"/>
+            <xs:attribute name="Tonality"/>
+            <xs:attribute name="TotalTime" type="xs:integer"/>
+            <xs:attribute name="TrackID" type="xs:integer"/>
+            <xs:attribute name="TrackNumber" type="xs:integer"/>
+            <xs:attribute name="Year" type="xs:integer"/>
+            <xs:attribute name="Energy">
+            <xs:attribute name="Lossless" type="xs:integer"/>
+            <xs:attribute name="OriginalFormat" type="xs:integer"/>
+            <xs:attribute name="Pressing">
+            <xs:attribute name="Riddim">
+            <xs:attribute name="KeywordTags">
+            <xs:attribute name="PurchasedFrom">
+            <xs:attribute name="PurchaseLink">            
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Tempo">
+        <xs:complexType>
+            <xs:attribute name="Battito" use="required" type="xs:integer"/>
+            <xs:attribute name="Bpm" use="required" type="xs:decimal"/>
+            <xs:attribute name="Inizio" use="required" type="xs:decimal"/>
+            <xs:attribute name="Metro" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CuePoint">
+        <xs:complexType>
+            <xs:attribute name="Name" use="required"/>
+            <xs:attribute name="Type" use="required" type="xs:integer"/>
+            <xs:attribute name="Start" use="required" type="xs:decimal"/>
+            <xs:attribute name="End" type="xs:decimal"/>
+            <xs:attribute name="Num" use="required" type="xs:integer"/>
+            <xs:attribute name="Red" type="xs:integer"/>
+            <xs:attribute name="Green" type="xs:integer"/>
+            <xs:attribute name="Blue" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Playlist">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="Playlist"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="Track"/>
+            </xs:sequence>
+            <xs:attribute name="Count" type="xs:integer"/>
+            <xs:attribute name="Entries" type="xs:integer"/>
+            <xs:attribute name="KeyType" type="xs:integer"/>
+            <xs:attribute name="Name" use="required"/>
+            <xs:attribute name="Type" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
