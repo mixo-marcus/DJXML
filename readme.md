@@ -28,6 +28,7 @@ Supported by (so far!): [www.mixo.dj](http://www.mixo.dj)
 
 
 ---- Track
+----- TrackID
 ----- TrackName
 ----- Album
 ----- Artist
@@ -55,7 +56,6 @@ Supported by (so far!): [www.mixo.dj](http://www.mixo.dj)
 ----- Size
 ----- Tonality
 ----- TotalTime
------ TrackID
 ----- TrackNumber
 ----- Year
 ----- Energy
@@ -87,10 +87,8 @@ Supported by (so far!): [www.mixo.dj](http://www.mixo.dj)
 
 --- Playlist
 ----- PlaylistName
------ Count
------ Entries
------ KeyType
------ Type
+----- TrackCount
+------- TrackID (one entry for each track in playlist)
 ```
 
 
