@@ -1,24 +1,20 @@
 # DJXML
 
-DJXML is an open format to import/export between DJ Software.
+DJXML is an open format to import & export between DJ Software.
 
-You own your DJ Library.  Let's keep it that way!
+You own your DJ Library.  Let's keep it that way.
 
 ## Contribute
 
-We are looking for contributors to help:
-- Contact DJ Software manufacturers to support the project
-- Define the Track criteria for DJXML
-- Test the XML/XSD format
-
-Thank you in advance for your help :-)
+We're looking for contributors to help:
+- Spread the word
+- Define the metadata
+- Test the XML and XSD
+- Build libraries
 
 ## More Info
 
 Project Website: [www.djxml.com](http://www.djxml.com)
-
-Supported by (so far!): [www.mixo.dj](http://www.mixo.dj)
-
 
 ## DJXML v1.0.1
 ```
