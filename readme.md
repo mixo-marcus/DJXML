@@ -50,7 +50,7 @@ Project Website: [www.djxml.com](http://www.djxml.com)
 ----- Remixer
 ----- SampleRate
 ----- Size
------ Tonality
+----- MusicalKey
 ----- TotalTime
 ----- TrackNumber
 ----- Year
