@@ -63,7 +63,7 @@
             <xs:attribute name="Remixer" type="xs:anyURI"/>
             <xs:attribute name="SampleRate" type="xs:integer"/>
             <xs:attribute name="Size" type="xs:integer"/>
-            <xs:attribute name="Tonality"/>
+            <xs:attribute name="MusicalKey"/>
             <xs:attribute name="TotalTime" type="xs:integer"/>
             <xs:attribute name="TrackNumber" type="xs:integer"/>
             <xs:attribute name="Year" type="xs:integer"/>
