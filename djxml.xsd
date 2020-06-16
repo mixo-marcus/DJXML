@@ -53,7 +53,6 @@
             <xs:attribute name="SubGenre"/>
             <xs:attribute name="SubSubGenre"/>
             <xs:attribute name="Grouping"/>
-            <xs:attribute name="Key" type="xs:integer"/>
             <xs:attribute name="Kind"/>
             <xs:attribute name="Label"/>
             <xs:attribute name="Location"/>
