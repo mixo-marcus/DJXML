@@ -1,108 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    <xs:element name="DJXML">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="Software"/>
-                <xs:element ref="Library"/>
-                <xs:element ref="Playlists"/>
-            </xs:sequence>
-            <xs:attribute name="DJXMLVersion" use="required" type="xs:NMTOKEN"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Software">
-        <xs:complexType>
-            <xs:attribute name="SoftwareName" use="required" type="xs:NCName"/>
-            <xs:attribute name="SoftwareVersion" use="required" type="xs:NMTOKEN"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Library">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" ref="Track"/>
-            </xs:sequence>
-            <xs:attribute name="Entries" use="required" type="xs:integer"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Playlists">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="Playlist"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Track">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element minOccurs="0" maxOccurs="unbounded" ref="Tempo"/>
-                <xs:element minOccurs="0" maxOccurs="unbounded" ref="CuePoint"/>
-            </xs:sequence>
-            <xs:attribute name="TrackID" type="xs:integer"/>
-            <xs:attribute name="TrackName"/>
-            <xs:attribute name="Album"/>
-            <xs:attribute name="Artist" type="xs:anyURI"/>
-            <xs:attribute name="Remixer"/>
-            <xs:attribute name="Producer"/>
-            <xs:attribute name="Bpm" type="xs:decimal"/>
-            <xs:attribute name="BitRate" type="xs:integer"/>
-            <xs:attribute name="Colour" type="xs:NMTOKEN"/>
-            <xs:attribute name="Comments"/>
-            <xs:attribute name="DateAdded"/>
-            <xs:attribute name="DiscNumber" type="xs:integer"/>
-            <xs:attribute name="Genre"/>
-            <xs:attribute name="SubGenre"/>
-            <xs:attribute name="SubSubGenre"/>
-            <xs:attribute name="Grouping"/>
-            <xs:attribute name="Kind"/>
-            <xs:attribute name="Label"/>
-            <xs:attribute name="Location"/>
-            <xs:attribute name="Mix"/>
-            <xs:attribute name="PlayCount" type="xs:integer"/>
-            <xs:attribute name="Rating" type="xs:integer"/>
-            <xs:attribute name="Remixer" type="xs:anyURI"/>
-            <xs:attribute name="SampleRate" type="xs:integer"/>
-            <xs:attribute name="Size" type="xs:integer"/>
-            <xs:attribute name="MusicalKey"/>
-            <xs:attribute name="TotalTime" type="xs:integer"/>
-            <xs:attribute name="TrackNumber" type="xs:integer"/>
-            <xs:attribute name="Year" type="xs:integer"/>
-            <xs:attribute name="Energy">
-            <xs:attribute name="Lossless" type="xs:integer"/>
-            <xs:attribute name="OriginalFormat" type="xs:integer"/>
-            <xs:attribute name="Pressing">
-            <xs:attribute name="Riddim">
-            <xs:attribute name="KeywordTags">
-            <xs:attribute name="PurchasedFrom">
-            <xs:attribute name="PurchaseLink">            
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="BeatGrid">
-        <xs:complexType>
-            <xs:attribute name="StartTime"/>
-            <xs:attribute name="Duration"/>
-            <xs:attribute name="BeatType"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="CuePoint">
-        <xs:complexType>
-            <xs:attribute name="Name"/>
-            <xs:attribute name="Type" type="xs:integer"/>
-            <xs:attribute name="Start" type="xs:decimal"/>
-            <xs:attribute name="End" type="xs:decimal"/>
-            <xs:attribute name="Num" type="xs:integer"/>
-            <xs:attribute name="Red" type="xs:integer"/>
-            <xs:attribute name="Green" type="xs:integer"/>
-            <xs:attribute name="Blue" type="xs:integer"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Playlist">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element minOccurs="0" ref="Playlist"/>
-                <xs:element minOccurs="0" maxOccurs="unbounded" ref="Track"/>
-            </xs:sequence>
-            <xs:attribute name="PlaylistName" use="required"/>
-            <xs:attribute name="TrackCount" type="xs:integer"/>
-        </xs:complexType>
-    </xs:element>
+	<xs:element name="DJXML">
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element name="Software">
+          <xs:complexType>
+     				<xs:attribute name="SoftwareName" use="required" type="xs:NCName"/>
+     				<xs:attribute name="SoftwareVersion" use="required" type="xs:NMTOKEN"/>
+      		</xs:complexType>
+    		</xs:element>
+    		<xs:element name="Library">
+    			<xs:complexType>
+    				<xs:sequence>
+    					<xs:element minOccurs="0" name="Track">
+    						<xs:complexType>
+    							<xs:sequence>
+        						<xs:element minOccurs="0" name="BeatGrid">
+        							<xs:complexType>
+        								<xs:attribute name="StartTime" type="xs:decimal"/>
+        								<xs:attribute name="Bpm" type="xs:decimal"/>
+        								<xs:attribute name="BeatType" type="xs:integer"/>
+        							</xs:complexType>
+        						</xs:element>
+            					<xs:element minOccurs="0" name="CuePoint">
+            						<xs:complexType>
+            							<xs:attribute name="Name"/>
+            							<xs:attribute name="Type" type="xs:integer"/>
+            							<xs:attribute name="Start" type="xs:decimal"/>
+            							<xs:attribute name="End" type="xs:decimal"/>
+            							<xs:attribute name="Num" type="xs:integer"/>
+            							<xs:attribute name="Red" type="xs:integer"/>
+            							<xs:attribute name="Green" type="xs:integer"/>
+            							<xs:attribute name="Blue" type="xs:integer"/
+        							</xs:complexType>
+        						</xs:element>
+            			</xs:sequence>
+            			<xs:attribute name="Id" type="xs:integer"/>
+            			<xs:attribute name="Title" type="xs:string"/>
+            			<xs:attribute name="Album" type="xs:string"/>
+            			<xs:attribute name="Artist" type="xs:string"/>
+            			<xs:attribute name="Remixer" type="xs:string"/>
+            			<xs:attribute name="Producer" type="xs:string"/>
+            			<xs:attribute name="Composer" type="xs:string"/>
+            			<xs:attribute name="Bpm" type="xs:decimal"/>
+            			<xs:attribute name="BitRate" type="xs:integer"/>
+            			<xs:attribute name="Comments" type="xs:string"/>
+            			<xs:attribute name="DateAdded" type="xs:date"/>
+            			<xs:attribute name="DiscNumber" type="xs:integer"/>
+            			<xs:attribute name="Genre" type="xs:string"/>
+            			<xs:attribute name="SubGenre" type="xs:string"/>
+            			<xs:attribute name="SubSubGenre" type="xs:string"/>
+            			<xs:attribute name="Grouping" type="xs:string"/>
+            			<xs:attribute name="Kind" type="xs:string"/>
+            			<xs:attribute name="Label" type="xs:string"/>
+            			<xs:attribute name="Location" type="xs:string"/>
+            			<xs:attribute name="Mix" type="xs:string"/>
+            			<xs:attribute name="PlayCount" type="xs:integer"/>
+            			<xs:attribute name="Rating" type="xs:decimal"/>
+            			<xs:attribute name="Remixer" type="xs:string"/>
+            			<xs:attribute name="SampleRate" type="xs:integer"/>
+            			<xs:attribute name="Size" type="xs:integer"/>
+            			<xs:attribute name="MusicalKey" type="xs:string"/>
+            			<xs:attribute name="TotalTime" type="xs:integer"/>
+            			<xs:attribute name="TrackNumber" type="xs:integer"/>
+            			<xs:attribute name="Year" type="xs:integer"/>
+            			<xs:attribute name="Energy" type="xs:string">
+            			<xs:attribute name="Lossless" type="xs:boolean"/>
+            			<xs:attribute name="Pressing" type="xs:string"/>
+            			<xs:attribute name="Riddim" type="xs:string"/>
+            			<xs:attribute name="Keywords" type="xs:string"/>
+            			<xs:attribute name="PurchasedFrom" type="xs:string"/>
+            			<xs:attribute name="PurchaseLink" type="xs:string"/> 
+    						</xs:complexType>
+    					</xs:element>
+    				</xs:sequence>
+    				<xs:attribute name="Entries" use="required" type="xs:integer"/>
+    			</xs:complexType>
+    		</xs:element>
+    		<xs:element name="Playlists">
+    			<xs:complexType>
+    				<xs:sequence>
+    					<xs:element minOccurs="0" name="Folder">
+    						<xs:complexType>
+    							<xs:sequence>
+    								<xs:element minOccurs="0" name="Playlist">
+    									<xs:complexType>
+    										<xs:sequence>
+    											<xs:element minOccurs="0" name="PlaylistTrack">
+    												<xs:complexType>
+    													<xs:attribute name="TrackId" use="required" type="xs:integer"/>
+    												</xs:complexType>
+    											</xs:element>
+    										</xs:sequence>
+    										<xs:attribute name="PlaylistName" use="required" type="xs:string"/>
+    										<xs:attribute name="Entries" use="required" type="xs:integer"/>
+    										<xs:attribute name="Id" use="required" type="xs:integer"/>
+    									</xs:complexType>
+    								</xs:element>
+    							</xs:sequence>
+    							<xs:attribute name="Name" use="required" type="xs:string"/>
+    							<xs:attribute name="Entries" use="required" type="xs:integer"/>
+    							<xs:attribute name="Id" use="required" type="xs:integer"/>
+    						</xs:complexType>
+    					</xs:element>
+    				</xs:sequence>
+    			</xs:complexType>    			
+    		</xs:element>
+      </xs:sequence>
+      <xs:attribute name="DJXMLVersion" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
